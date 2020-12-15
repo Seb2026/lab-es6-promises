@@ -16,6 +16,9 @@ addFood(steak[0], '#steak', () => {
           addFood(steak[5], `#steak`, () => {
             addFood(steak[6], `#steak`, () => {
               addFood(steak[7], `#steak`, () => {
+                const steakImg = document.createElement(`img`);
+                steakImg.src = `./public/images/steak.jpg`;
+                document.getElementById(`table`).appendChild(steakImg);
                 
               });
             });
@@ -36,6 +39,9 @@ addFood(mashPotatoes[0], '#mashPotatoes').then(() => {
     addFood(mashPotatoes[2], `#mashPotatoes`).then(() => {
       addFood(mashPotatoes[3], `#mashPotatoes`).then(() => {
         addFood(mashPotatoes[4], `#mashPotatoes`).then(() => {
+          const potatoesImg = document.createElement(`img`);
+          potatoesImg.src = `./public/images/mashPotatoes.jpg`;
+          document.getElementById(`table`).appendChild(potatoesImg);
 
         });
       });
@@ -47,6 +53,13 @@ addFood(mashPotatoes[0], '#mashPotatoes').then(() => {
 
   async function makeFood(step) {
     // ... your code here
+    for(let i=0; i < step.length; i++){
+      await(addFood(step[i], `#brusselSprouts`));
+    }
+
+    const brusselSprouts = document.createElement(`img`);
+    brusselSprouts.src = `./public/images/brusselSprouts.jpg`;
+    document.getElementById(`table`).appendChild(brusselSprouts);
     
   }
-  makeFood(eachStep);
+  makeFood(brusselSprouts);
